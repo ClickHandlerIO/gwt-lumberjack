@@ -1,5 +1,7 @@
 package io.clickhandler.gwtLumberjack.client;
 
+import io.clickhandler.logglyGwt.client.Loggly;
+
 public class Logger {
     private static Level LOG_LEVEL = Level.ERROR;
     private static boolean LOGGLY_ENABLED = false;
@@ -61,7 +63,7 @@ public class Logger {
         logToBrowserConsole(level.toString(), clazzName, message, data);
 
         if (LOGGLY_ENABLED) {
-            // todo send to loggly
+            Loggly.push(level.toString(), clazzName + ": " + message, data);
         }
     }
 

@@ -53,6 +53,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <gwt.version>2.8.0-SNAPSHOT</gwt.version>
+        <loggly-gwt.version>0.1.0-SNAPSHOT</loggly-gwt.version>
         <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
         <gwt-maven-plugin.version>2.8.0-SNAPSHOT</gwt-maven-plugin.version>
         <build-helper-maven-plugin.version>1.10</build-helper-maven-plugin.version>
@@ -148,6 +149,12 @@
             <groupId>com.google.gwt</groupId>
             <artifactId>gwt-elemental</artifactId>
             <version>${gwt.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.clickhandler</groupId>
+            <artifactId>loggly-gwt</artifactId>
+            <version>${loggly-gwt.version}</version>
         </dependency>
 
     </dependencies>
