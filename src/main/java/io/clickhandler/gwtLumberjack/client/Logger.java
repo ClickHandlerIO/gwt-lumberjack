@@ -18,26 +18,20 @@ public class Logger {
     }
 
     public enum Level {
-        TRACE(4, "trace"),
-        DEBUG(3, "debug"),
-        INFO(2, "info"),
-        WARN(1, "warn"),
-        ERROR(0, "error");
+        TRACE(4),
+        DEBUG(3),
+        INFO(2),
+        WARN(1),
+        ERROR(0);
 
-        private String level;
         private int value;
 
-        Level(int value, String level) {
+        Level(int value) {
             this.value = value;
-            this.level = level;
         }
 
         public int getValue() {
             return value;
-        }
-
-        public String getLevel() {
-            return level;
         }
     }
 
@@ -68,13 +62,13 @@ public class Logger {
     }
 
     private static native void logToBrowserConsole(String level, String clazzName, String message, Object... data) /*-{
-        if (level === 'trace') {
+        if (level === 'TRACE') {
             console.trace("[" + level.toUpperCase() + "] " + clazzName + ": " + message, data);
-        } else if (level === 'debug') {
+        } else if (level === 'DEBUG') {
             console.debug("[" + level.toUpperCase() + "] " + clazzName + ": " + message, data);
-        } else if (level === 'info') {
+        } else if (level === 'INFO') {
             console.info("[" + level.toUpperCase() + "] " + clazzName + ": " + message, data);
-        } else if (level === 'warn') {
+        } else if (level === 'WARN') {
             console.warn("[" + level.toUpperCase() + "] " + clazzName + ": " + message, data);
         } else {
             console.error("[" + level.toUpperCase() + "] " + clazzName + ": " + message, data);
